@@ -7,3 +7,12 @@ Vendedor::Vendedor(string _nombre, string _apellido)
 	apellido = _apellido;
 	codigoVendedor++;
 }
+
+vector<Cotizacion> Vendedor::realizarCotizacion()
+{	
+	
+
+	return vector<Cotizacion>();
+}
+
+

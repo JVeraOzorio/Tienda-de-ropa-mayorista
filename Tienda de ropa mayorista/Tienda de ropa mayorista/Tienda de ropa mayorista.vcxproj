@@ -130,21 +130,29 @@
     <ClCompile Include="Camisa.cpp" />
     <ClCompile Include="Cotizacion.cpp" />
     <ClCompile Include="Fecha.cpp" />
+    <ClCompile Include="IVista.cpp" />
+    <ClCompile Include="Modelo.cpp" />
     <ClCompile Include="Pantalon.cpp" />
     <ClCompile Include="Prenda.cpp" />
+    <ClCompile Include="Presentador.cpp" />
     <ClCompile Include="Tienda de ropa mayorista.cpp" />
     <ClCompile Include="Tienda.cpp" />
     <ClCompile Include="Vendedor.cpp" />
+    <ClCompile Include="VistaConsola.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camisa.h" />
     <ClInclude Include="Cotizacion.h" />
     <ClInclude Include="Fecha.h" />
+    <ClInclude Include="IVista.h" />
+    <ClInclude Include="Modelo.h" />
     <ClInclude Include="Pantalon.h" />
     <ClInclude Include="Prenda.h" />
+    <ClInclude Include="Presentador.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Tienda.h" />
     <ClInclude Include="Vendedor.h" />
+    <ClInclude Include="VistaConsola.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Tienda de ropa mayorista.rc" />

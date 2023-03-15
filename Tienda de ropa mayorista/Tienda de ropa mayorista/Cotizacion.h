@@ -15,7 +15,7 @@ private:
 	int cantidad_;
 	double precio_;
 public:
-	Cotizacion(Fecha fecha, int codigoVendedor, const Prenda* prenda, int cantidad, double precio) : fecha_(fecha), codigoVendedor_(codigoVendedor), prenda_(prenda), cantidad_(cantidad), precio_(precio) { codigoCotizacion++; }
-	
+	Cotizacion( int codigoVendedor, const Prenda* prenda, int cantidad, double precio) : fecha_(), codigoVendedor_(codigoVendedor), prenda_(prenda), cantidad_(cantidad), precio_(precio) { codigoCotizacion++; }
+	void mostrar();
 };
 

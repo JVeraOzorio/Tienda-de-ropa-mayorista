@@ -10,4 +10,5 @@ Tienda::~Tienda()
     for (auto prenda : prendas) {
         delete prenda;
     }
+
 }

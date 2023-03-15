@@ -1,2 +1,5 @@
-﻿  Vendedor.cpp
+﻿  VistaConsola.cpp
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\Camisa.h(13,129): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\Pantalon.h(11,105): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(186,33): warning C4101: 'e': variable local sin referencia
   Tienda de ropa mayorista.vcxproj -> C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\x64\Debug\Tienda de ropa mayorista.exe
