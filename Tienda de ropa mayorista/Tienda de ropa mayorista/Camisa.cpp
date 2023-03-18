@@ -1,5 +1,12 @@
 #include "Camisa.h"
 
+Camisa::Camisa(int calidad, int stock, int manga, int cuello, double precio) : Prenda(calidad,stock,precio)
+{
+	this->tipo_cuello_ = cuello == 0 ? TipoCuello::Comun : TipoCuello::Mao;
+	this->tipo_manga_ = manga == 0 ? TipoManga::Corta : TipoManga::Larga;
+
+}
+
 int Camisa::GetManga()
 {   
     int _manga;

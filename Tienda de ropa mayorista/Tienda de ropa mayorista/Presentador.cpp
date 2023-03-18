@@ -28,6 +28,8 @@ void Presentador::mostrarHistorial()
 
 int Presentador::getStockCamisa(int calidad, int manga, int cuello, double precio)
 {	
+	
+
 	vector<Prenda*> prendas = modelo->getPrendas();
 	
 	int stockCamisa = 0;
@@ -42,9 +44,36 @@ int Presentador::getStockCamisa(int calidad, int manga, int cuello, double preci
 	return stockCamisa;
 }
 
-double Presentador::cotizarCamisa(int calidad, int manga, int cuello, int cantidad, double precuio)
+int Presentador::getStockPantalon(int calidad, int corte, double precio)
 {
-	modelo.
+	vector<Prenda*> prendas = modelo->getPrendas();
+	int stockPantalones = 0;
+	
+	for (int i = 0; i < prendas.size(); i++) {
+
+		Pantalon* pantalon = dynamic_cast<Pantalon*>(prendas[i]);
+		if (pantalon != nullptr && pantalon->GetCorte() == corte && pantalon->getCalidad() == calidad) {
+			stockPantalones += pantalon->getStock();
+		}
+	}
+	
+	
+	return stockPantalones;
+}
+
+bool Presentador::cotizarPantalon(int calidad, int corte, int cantidad,  double precio)
+{
+	modelo->cotizarPantalon(calidad, corte, cantidad, precio).mostrar();
+	return true; 
+}
+
+double Presentador::cotizarCamisa(int calidad, int manga, int cuello, int cantidad, double precio)
+{	
+	
+
+	modelo->cotizarCamisa(calidad, manga, cuello, cantidad, precio).mostrar();
+	
+	return 0.0;
 }
 
 

@@ -22,8 +22,8 @@ Fecha::Fecha(int dia, int mes, int anio)
 
 string Fecha::toString()
 {
-    string fecha;
-    fecha = to_string(dia) + "/" + to_string(mes) + "/" + to_string(anio);
-    return fecha;
+    std::ostringstream streamFecha;
+    streamFecha << dia << "/" << mes << "/" << anio;
+    return streamFecha.str();
 }
 

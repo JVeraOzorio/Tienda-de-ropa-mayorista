@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <sstream>
 using namespace std;
 class Fecha
 {

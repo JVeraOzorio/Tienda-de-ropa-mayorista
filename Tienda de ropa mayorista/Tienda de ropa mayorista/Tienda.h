@@ -7,7 +7,7 @@
 #include "Camisa.h"
 #include "Pantalon.h"
 #include "Vendedor.h"
-
+#include "Cotizacion.h"
 using namespace std;
 
 
@@ -21,13 +21,16 @@ private:
 
 public:
 	Tienda(string _nombre, string _direccion,string Nombrevendedor, string ApellVendedor) : nombre(_nombre), direccion(_direccion), prendas(vector<Prenda*>()),vendedor(Nombrevendedor,ApellVendedor) { }
-	void AgregarPrenda(int calidad, double precio_unitario, int stock, string tipo);
+	Tienda();
+	void AgregarPrenda(Prenda* prenda);
 	string getNombre() { return nombre; }
 	string getDireccion() {return direccion;}
 	string getVendedor() { return vendedor.getNombre() + " " + vendedor.getApellido(); }
-	int getCodigoVendedor() { return vendedor.getCodigo(); }
-	vector<Prenda*> getPrendas() { return prendas; }
-
+	int getCodigoVendedor() {return vendedor.getCodigo(); }
+	vector<Prenda*> getPrendas(); //{ 	return prendas; }
+	Cotizacion cotizar(Prenda* prenda, int cantidad, double precio);
+	void getStock ();
+	 
 	~Tienda();
 
 

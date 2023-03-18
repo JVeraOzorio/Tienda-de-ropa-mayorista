@@ -13,7 +13,8 @@ private:
 		void mostrarVendedor();
 		void mostrarHistorial();
 		int getStockCamisa(int calidad,int manga, int cuello, double precio);
-		bool cotizarPantalon();
-		double cotizarCamisa(int calidad, int manga, int cuello, int cantidad, double precuio);
+		int getStockPantalon(int calidad, int corte, double precio);
+		bool cotizarPantalon(int calidad,int corte,int cantidad, double precio);
+		double cotizarCamisa(int calidad, int manga, int cuello, int cantidad, double precio);
 };
 

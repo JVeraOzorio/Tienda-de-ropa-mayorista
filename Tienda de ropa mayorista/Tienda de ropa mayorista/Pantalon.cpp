@@ -1,19 +1,25 @@
 #include "Pantalon.h"
 
-string Pantalon::GetCorte()
+Pantalon::Pantalon(int calidad, int stock, int corte, double precio) : Prenda(calidad, stock, precio)
+{
+	this->corte = corte == 0 ? TipoCorte::Comun : TipoCorte::Chupin;
+
+}
+
+int Pantalon::GetCorte()
 {   
-    string _corte;
+    int _corte;
 
 	switch (corte)
 	{
 	case TipoCorte::Chupin:
-		_corte = "chupin";
+		_corte = 1;
 		break;
 	case TipoCorte::Comun:
-		_corte = "comun";
+		_corte = 0;
 		break;
 	default:
-		_corte = "comun";
+		_corte = 0;
 		break;
 	}
 

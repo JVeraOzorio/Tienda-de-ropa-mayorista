@@ -3,6 +3,8 @@
 #include <iostream>
 #include <vector>
 #include"Cotizacion.h"
+#include "Camisa.h"
+#include "Pantalon.h"
 using namespace std;
 class Vendedor
 {
@@ -17,6 +19,6 @@ public:
 	string getNombre() { return nombre; }
 	string getApellido() { return apellido; }
 	int getCodigo() { return codigoVendedor; }
-	vector<Cotizacion> realizarCotizacion();
+	Cotizacion realizarCotizacion(Prenda* prenda, int cantidad, double precio);
 };
 

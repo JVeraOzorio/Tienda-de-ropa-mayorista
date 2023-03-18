@@ -27,7 +27,17 @@ public:
 	 void MenuCorte();
 	 void MenuCalidad();
 	 bool validarStock(int stock, int cantidadProductoCotizar);
+	 void mostrarMenuPantalon();
+	 int guardarOpcionCorte(int opcion);
+	 int guardarOpcionCalidad(int opcion);
+	 int guardarOpcionManga(int opcion);
+	 int guardarOpcionCuello(int opcion);
+	 int guardarOpcionCantidad(int opcion);
+	 double guardarOpcionPrecio(int &opcion);
+	 double validarEntradaPrecio(string input);
 
+
+	 void prueba();
 	 
 
 };

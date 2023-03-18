@@ -18,7 +18,7 @@ private:
 	vector<Cotizacion*> cotizaciones;
 	bool agregarCotizacion(Cotizacion* cotizacion);
 public:
-	Modelo() : tienda(new Tienda("Quarkis", "Av Siempre viva 123","Jorge","Vera")), prendas(vector<Prenda*>()), cotizaciones(vector<Cotizacion*>()) {}
+	Modelo() { tienda = new Tienda(); }
 	string getNombreTienda();
 	string getNombreVendedor();
 	int getCodigoVendedor();
@@ -26,5 +26,8 @@ public:
 	bool cotizar();
 	int getStockCamisa(int calidad, int manga, int cuello);
 	vector<Prenda*> getPrendas() { return tienda->getPrendas(); }
+	void mostrarPrendas() { tienda->getStock(); }
+	Cotizacion cotizarCamisa(int calidad, int manga, int cuello, int cantidad, double precio);
+    Cotizacion cotizarPantalon(int calidad, int corte, int cantidad, double precio);
 };
 

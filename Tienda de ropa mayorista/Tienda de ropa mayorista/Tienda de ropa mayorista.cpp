@@ -3,8 +3,13 @@
 
 #include <iostream>
 #include "VistaConsola.h"
+#include "Tienda.h"
+#include <vector>
+#include "Presentador.h"
+#include "Cotizacion.h"
 
 int main()
 {
-    VistaConsola menu;
+	VistaConsola menu;
+
 }

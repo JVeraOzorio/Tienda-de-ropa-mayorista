@@ -2,7 +2,7 @@
 
 VistaConsola::VistaConsola()
 {
-	SetConsoleTitleW(L"The Soldier");
+	SetConsoleTitleW(L"Cotizador Express");
 	setlocale(LC_ALL, "es_Es");
 	presentador = new Presentador(this);
 	mostrarMenu();
@@ -15,8 +15,8 @@ void VistaConsola::mostrarMenu()
 	do
 	{	
 		mostarTitulo();
-		presentador->mostrarTienda();
-		presentador->mostrarVendedor();
+		//presentador->mostrarTienda();
+		//presentador->mostrarVendedor();
 		cout << "Seleccione una opcion del menú" << endl<<endl;
 		cout << "1)" << " Historial de cotizaciones" << endl;
 		cout << "2)" << " Realizar cotizacion" << endl;
@@ -96,7 +96,7 @@ void VistaConsola::mostrarMenuCotizar()
 			mostrarMenuCamisa();
 		}
 		else if (opcion == 2) {
-
+			mostrarMenuPantalon();
 		}
 		mostarTitulo();
 		cout << " - COTIZAR" << endl;
@@ -141,19 +141,29 @@ void VistaConsola::mostrarMenuCamisa()
 								cin >> precio;
 
 								int stock = presentador->getStockCamisa(calidad, manga, cuello, precio);
-								cout << " Existen " << stock << " cantidad de unidades en Stock de esta convinacion";
+								cout << " Existen " << stock << " cantidad de unidades en Stock de esta combinacion" << endl;
 								if (stock == 0) {
 									cout << " ingrese productos a la tienda antes de realizar una cotizacion" << endl;
 									system("pause");
 								}
 								else {
+									
 									encabezado();
 									cout << "Paso 5: Ingrese la cantidad  de unidades a cotizar";
 									cin >> input;
 									cantidad = validarEntrada(input);
-									if (validarStock(stock, cantidad)) {
-										presentador.cotizarCamisa();
-									}
+
+										if (cantidad <= stock) {
+											system("cls");
+											encabezado();
+											presentador->cotizarCamisa(calidad,manga,cuello,cantidad,precio);
+											system("pause");
+										}else {
+											system("cls");
+											cout << " no se puede cotizar mas de las unidades disponibles" << endl;
+											system("pause");
+										}
+										
 								}
 							}
 
@@ -241,8 +251,133 @@ void VistaConsola::MenuCalidad()
 }
 
 bool VistaConsola::validarStock(int stock, int cantidadProductoCotizar)
+{		
+	cout << "ENTRO " << endl;
+	if (stock < cantidadProductoCotizar) {
+		return false;
+	}
+	else return true;
+}
+
+void VistaConsola::mostrarMenuPantalon()
 {	
+	string input;
+	int opcion = 0, calidad = 0, corte = 0, cantidad =0;
+	double precio=0;
+	do
+	{
+		encabezado();
+		cout << "El pantalón a cotizar, ¿Es chupín?" << endl;
+		cout << "1) SI" << endl;
+		cout << "2) NO" << endl;
+		cin >> input;
+		opcion = validarEntrada(input);
+		corte = guardarOpcionCorte(opcion);
+		system("cls");
+		calidad = guardarOpcionCalidad(opcion);
+		system("cls");
+		//precio = guardarOpcionPrecio(opcion);
+		encabezado();
+		cout << "ingrese el precio unitario del producto" << endl;
+		cin >> input;
+		precio = validarEntradaPrecio(input);
+
+		int stock = presentador->getStockPantalon(calidad, corte,precio);
+		cout << " Existen " << stock << " cantidad de unidades en Stock de esta combinacion" << endl;
+		if (stock == 0) {
+			cout << " ingrese productos a la tienda antes de realizar una cotizacion" << endl;
+			system("pause");
+		}
+		else {
+
+			encabezado();
+			cout << "Paso 5: Ingrese la cantidad  de unidades a cotizar" << endl;
+			cin >> input;
+			cantidad = validarEntrada(input);
+
+			system("cls");
+			if (cantidad <= stock) {
+				system("cls");
+				//encabezado();
+				presentador->cotizarPantalon(calidad, corte, cantidad ,precio);
+				system("pause");
+			}
+			else {
+				system("cls");
+				cout << " no se puede cotizar mas de las unidades disponibles" << endl;
+				system("pause");
+			}
+			
+		}
+
+
+	} while (opcion!=3);
+
 	
-	return  (stock < cantidadProductoCotizar);
+}
+
+int VistaConsola::guardarOpcionCorte(int opcion)
+{	
+	int corte = -1;
+
+	if (opcion == 1 ) {
+		corte = 0;
+	}
+	else if(opcion == 2 ) {
+		corte = 1;
+	}
+	return corte;
+}
+
+int VistaConsola::guardarOpcionCalidad(int opcion)
+{	
+	string input;
+	int calidad = 0;
+	MenuCalidad();
+	cin >> input;
+	calidad = validarEntrada(input);
+	system("cls");
+
+	return calidad;
+}
+
+double VistaConsola::guardarOpcionPrecio(int &opcion)
+{	
+	string input;
+	double precio;
+	encabezado();
+	cout << "ingrese el precio unitario del producto" << endl;
+	cin >> input;
+	precio = validarEntradaPrecio(input);
+
+	if (precio == 3) { opcion = precio; }
+
+	return 0;
+}
+
+double VistaConsola::validarEntradaPrecio(string input)
+{	
+
+	double num = -1;
+	try
+	{
+		num = stod(input);
+		return num;
+	}
+	catch (const invalid_argument& e) {
+		cout << "Error: Entrada invalida, ingrese un numero de las opciones " << endl;
+	}
+
+	if (num > 2 || num < 0) {
+		cout << "Eror: Ingrese una opcion valida" << endl;
+	}
+	system("pause");
+	return num;
+}
+
+void VistaConsola::prueba()
+{
+	//presentador->cotizarCamisa(1, 0, 0, 10, 10);
+
 }
 
