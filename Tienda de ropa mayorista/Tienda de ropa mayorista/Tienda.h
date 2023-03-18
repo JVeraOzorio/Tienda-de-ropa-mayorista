@@ -30,9 +30,8 @@ public:
 	vector<Prenda*> getPrendas(); //{ 	return prendas; }
 	Cotizacion cotizar(Prenda* prenda, int cantidad, double precio);
 	void getStock ();
-	 
 	~Tienda();
-
+	vector <Cotizacion> getCotizaciones() { return vendedor.getCotizaciones(); }
 
 };
 

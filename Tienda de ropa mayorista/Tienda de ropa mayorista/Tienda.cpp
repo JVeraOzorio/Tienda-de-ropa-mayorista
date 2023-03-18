@@ -12,7 +12,7 @@ Tienda::Tienda() : vendedor("Jorge", "Vera")
     this->nombre = "Quarkies";
     this->direccion = "Av madero 123 ";
     prendas.push_back(new Camisa(0, 100, 0, 1, 0));
-    prendas.push_back(new Camisa(1, 50, 1, 1, 0));
+    prendas.push_back(new Camisa(1, 100, 0, 1, 0));
     prendas.push_back(new Camisa(0, 150, 0, 0, 0));
     prendas.push_back(new Camisa(1, 150, 0, 0, 0));
     prendas.push_back(new Camisa(0, 75, 1, 1, 0));
@@ -53,3 +53,4 @@ void Tienda::getStock()
     }
 
 }
+

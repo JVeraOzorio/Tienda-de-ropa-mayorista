@@ -252,7 +252,7 @@ void VistaConsola::MenuCalidad()
 
 bool VistaConsola::validarStock(int stock, int cantidadProductoCotizar)
 {		
-	cout << "ENTRO " << endl;
+	cout << "ENTRO " << endl;											//	<------------ NO SE USA 
 	if (stock < cantidadProductoCotizar) {
 		return false;
 	}

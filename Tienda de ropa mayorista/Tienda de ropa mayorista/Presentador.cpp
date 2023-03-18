@@ -15,14 +15,16 @@ void Presentador::mostrarVendedor()
 
 void Presentador::mostrarHistorial()
 {
-	std::vector<Cotizacion*> cotizacion = modelo->getCotizaciones();
+	std::vector<Cotizacion> cotizacion = modelo->getCotizaciones();
+
 	if (cotizacion.empty()) {
 		cout << "No hay ninguna cotizacion para mostrar." << endl;
 	}
 	else {
 		for (int i = 0; i < cotizacion.size(); i++) {
-			cotizacion[i]->mostrar();
-		}
+			cotizacion[i].mostrar();
+			
+		} 
 	}
 }
 

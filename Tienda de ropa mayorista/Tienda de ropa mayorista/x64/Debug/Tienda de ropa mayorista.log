@@ -1,9 +1,2 @@
-﻿  Modelo.cpp
-  Presentador.cpp
-  Tienda de ropa mayorista.cpp
-  VistaConsola.cpp
-C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(205,33): warning C4101: 'e': variable local sin referencia
-C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(353,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(367,33): warning C4101: 'e': variable local sin referencia
-  Generando código...
+﻿  Tienda.cpp
   Tienda de ropa mayorista.vcxproj -> C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\x64\Debug\Tienda de ropa mayorista.exe

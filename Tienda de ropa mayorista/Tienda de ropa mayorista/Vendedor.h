@@ -20,5 +20,6 @@ public:
 	string getApellido() { return apellido; }
 	int getCodigo() { return codigoVendedor; }
 	Cotizacion realizarCotizacion(Prenda* prenda, int cantidad, double precio);
+	vector<Cotizacion> getCotizaciones() { return cotizaciones; }
 };
 

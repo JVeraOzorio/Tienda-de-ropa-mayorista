@@ -12,10 +12,12 @@ Cotizacion Vendedor::realizarCotizacion(Prenda* prenda, int cantidad, double pre
 {	
 	if (Camisa* c = dynamic_cast<Camisa*> (prenda)){
 
-		if (c->GetManga() == 0) {
+		//Falla el calulo de la camisa manga corta, cuello mao.
+
+		if (c->GetManga() == 1) {
 			precio = precio * 0.90;
 		}
-		if (c->GetCuello() == 1) {
+		if (c->GetCuello() == 0) {
 			precio = precio * 1.03;
 		}
 		if (c->getCalidad() == 1) {
@@ -30,7 +32,7 @@ Cotizacion Vendedor::realizarCotizacion(Prenda* prenda, int cantidad, double pre
 	}
 	else if (Pantalon* p = dynamic_cast<Pantalon*> (prenda)) {
 
-		if (p->GetCorte() == 1) {
+		if (p->GetCorte() == 0) {
 			precio = precio * 0.88;
 		}
 		if (p->getCalidad() == 1) {

@@ -8,14 +8,15 @@ using namespace std;
 class Cotizacion
 {
 private:
-	static int codigoCotizacion;
+	int codigoCotizacion = 0;
 	Fecha fecha_;
 	int codigoVendedor_;
 	const Prenda* prenda_;
 	int cantidad_;
 	double precio_;
+	static int contador;
 public:
-	Cotizacion( int codigoVendedor, const Prenda* prenda, int cantidad, double precio) : fecha_(), codigoVendedor_(codigoVendedor), prenda_(prenda), cantidad_(cantidad), precio_(precio) { codigoCotizacion++; }
+	Cotizacion(int codigoVendedor, const Prenda* prenda, int cantidad, double precio) : fecha_(), codigoVendedor_(codigoVendedor), prenda_(prenda), cantidad_(cantidad), precio_(precio) {  codigoCotizacion = ++contador; }
 	void mostrar();
 	void mostrarPrecio(){cout<<precio_<<endl;}
 	void mostrarFecha(){cout << fecha_.toString() << endl;}
