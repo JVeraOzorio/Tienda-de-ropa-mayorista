@@ -35,6 +35,8 @@ public:
 	 int guardarOpcionCantidad(int opcion);
 	 double guardarOpcionPrecio(int &opcion);
 	 double validarEntradaPrecio(string input);
+	 int validarEntradaCaracteristica(string input,int &opcion);
+	 double validadEntradaPrecio(string inout, int& opcion);
 
 
 	 void prueba();

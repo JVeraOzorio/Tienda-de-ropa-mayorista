@@ -14,6 +14,7 @@ void VistaConsola::mostrarMenu()
 	int opcion;
 	do
 	{	
+		system("cls");
 		mostarTitulo();
 		//presentador->mostrarTienda();
 		//presentador->mostrarVendedor();
@@ -24,7 +25,17 @@ void VistaConsola::mostrarMenu()
 
 		cin >> input;
 		opcion = validarEntrada(input);
+
 		system("cls");
+		if (opcion == 0 || opcion > 3) {
+			cout << "Opcion invalida" << endl;
+			system("pause");
+		}
+		else if (opcion == 3) {
+			cout << "Gracias por usar el programa" << endl;
+			system("pause");
+		}
+		
 		
 		seleccionar(opcion);
 		
@@ -67,11 +78,7 @@ void VistaConsola::mostrarHistorial()
 
 void VistaConsola::Cotizar()
 {
-	mostarTitulo();
-	cout << " - COTIZAR" << endl;
-	cout << "<---->" << endl;
-	cout << "Presionar 3 para volver al menu anterior" << endl;
-	cout << "<---->" << endl;
+
 	mostrarMenuCotizar();
 
 }
@@ -82,15 +89,15 @@ void VistaConsola::mostrarMenuCotizar()
 	int opcion;
 	do
 	{	
-		
+		encabezado();
 		cout << "Paso 1: Selecciona la prenda a cotizar:" << endl;
 		cout << "1) Camisa" << endl;
 		cout << "2) Pantalón " << endl;
 
 		cin >> input;
 		opcion = validarEntrada(input);
-
 		system("cls");
+
 		if (opcion == 1) {
 
 			mostrarMenuCamisa();
@@ -98,18 +105,24 @@ void VistaConsola::mostrarMenuCotizar()
 		else if (opcion == 2) {
 			mostrarMenuPantalon();
 		}
+
+		if (opcion <= 0 || opcion > 3) {
+			cout << "Opcion invalida" << endl;
+			system("pause");
+		}
+		/*
 		mostarTitulo();
 		cout << " - COTIZAR" << endl;
 		cout << "<---->" << endl;
 		cout << "Presionar 3 para volver al menu anterior" << endl;
-		cout << "<---->" << endl;
+		cout << "<---->" << endl;*/
 	} while (opcion != 3);
 	
 }
 
 void VistaConsola::mostrarMenuCamisa()
 {	
-	int opcion=0;
+	int opcion=3;
 		string input;
 		int manga, cuello, calidad, cantidad;
 		double precio=0;
@@ -118,67 +131,79 @@ void VistaConsola::mostrarMenuCamisa()
 		{
 			encabezado();
 			cout << "La camisa a cotizar , ¿Es manga larga? " << endl;
-			cout << "0) SI" << endl;
-			cout << "1) NO" << endl;
+			cout << "1) SI" << endl;
+			cout << "2) NO" << endl;
 
 			cin >> input;
-			manga = validarEntrada(input);
+			manga = validarEntradaCaracteristica(input,opcion);
 			system("cls");
-			if (manga != 2) {
+
+			if (opcion < 3 && opcion > 0 )
+			{	
 				MenuCuello();
 				cin >> input;
-				cuello = validarEntrada(input);
+				cuello = validarEntradaCaracteristica(input,opcion);
 				system("cls");
-
-					if (cuello != 2) {
-						MenuCalidad();
+				if (opcion < 3 && opcion >0) 
+				{
+					MenuCalidad();
+					cin >> input;
+					calidad = validarEntradaCaracteristica(input,opcion);
+					system("cls");
+					if (opcion < 3 && opcion > 0) {
+						encabezado();
+						cout << "ingrese el precio unitario del producto" << endl;
 						cin >> input;
-						calidad = validarEntrada(input);
-						system("cls");
-						if (calidad != 2) {
+						precio = validadEntradaPrecio(input, opcion);
+						int stock = presentador->getStockCamisa(calidad, manga, cuello, precio);
+						
+						cin.get();
+						if (stock == 0) {
+							cout << " ingrese productos a la tienda antes de realizar una cotizacion" << endl;
+							system("pause");
+						}
+						else {
+							system("cls");
+							encabezado();
+							cout << " Existen " << stock << " en Stock de esta combinacion" << endl;
+							cout << "Paso 5: Ingrese la cantidad  de unidades a cotizar" << endl;
+							cin >> input;
+							cantidad = validarEntrada(input);
+							if (cantidad <= stock) {
+								system("cls");
 								encabezado();
-								cout << "ingrese el precio unitario del producto" << endl;
-								cin >> precio;
-
-								int stock = presentador->getStockCamisa(calidad, manga, cuello, precio);
-								cout << " Existen " << stock << " cantidad de unidades en Stock de esta combinacion" << endl;
-								if (stock == 0) {
-									cout << " ingrese productos a la tienda antes de realizar una cotizacion" << endl;
-									system("pause");
-								}
-								else {
-									
-									encabezado();
-									cout << "Paso 5: Ingrese la cantidad  de unidades a cotizar";
-									cin >> input;
-									cantidad = validarEntrada(input);
-
-										if (cantidad <= stock) {
-											system("cls");
-											encabezado();
-											presentador->cotizarCamisa(calidad,manga,cuello,cantidad,precio);
-											system("pause");
-										}else {
-											system("cls");
-											cout << " no se puede cotizar mas de las unidades disponibles" << endl;
-											system("pause");
-										}
-										
-								}
+								presentador->cotizarCamisa(calidad, manga, cuello, cantidad, precio);
+								system("pause");
 							}
-
+							else {
+								system("cls");
+								cout << " no se puede cotizar mas de las unidades disponibles" << endl;
+								system("pause");
+							}
+							opcion = 3;
+							system("cls");
+							cout << " ¿Desea cotizar otra camisa? " << endl;
+							cout << "1)Si" << endl;
+							cout << "2)No" << endl;
+							cin >> input;
+							opcion = validarEntrada(input);
+							system("cls");
+							if (opcion == 2) opcion = 3;
+						}
 					}
-
+				}
 			}
-
-			system("cls");
-			cout << " ¿Desea cotizar otra camisa? " << endl;
-			cout << "1)Si" << endl;
-			cout << "2)No" << endl;
-			cin >> opcion;
-			system("cls");
-
-		} while (opcion != 2);
+			if (opcion == 0 || opcion > 3) {
+				cout << "Opcion invalida" << endl;
+				system("pause");
+			}
+			if (opcion == 3) {
+				cout << "Gracias por usar el programa" << endl;
+				system("pause");
+			}
+			
+			
+		} while (opcion !=3);
 		
 
 	
@@ -189,7 +214,7 @@ void VistaConsola::encabezado()
 	mostarTitulo();
 	cout << " - COTIZAR" << endl;
 	cout << "<---->" << endl;
-	cout << "Presionar 2 para volver al menu anterior" << endl;
+	cout << "Presionar 3 para volver al menu anterior" << endl;
 	cout << "<---->" << endl;
 
 }
@@ -206,9 +231,6 @@ int VistaConsola::validarEntrada(string input)
 		cout << "Error: Entrada invalida, ingrese un numero de las opciones " << endl;
 	}
 
-	if (num > 2 || num < 0) {
-		cout << "Eror: Ingrese una opcion valida" << endl;
-	}
 	system("pause");
 		return num;
 }
@@ -238,16 +260,16 @@ void VistaConsola::MenuCuello()
 {	
 	encabezado();
 	cout << "Paso 2.b La camisa, ¿Es cuello Mao?" << endl;
-	cout << "0) SI" << endl;
-	cout << "1) NO" << endl;
+	cout << "1) SI" << endl;
+	cout << "2) NO" << endl;
 }
 
 void VistaConsola::MenuCalidad()
 {
 	encabezado();
 	cout << "Paso 3 : Seleccione la calidad de la prenda" << endl;
-	cout << "0) Standart" << endl;
-	cout << "1) Premium " << endl;
+	cout << "1) Standart" << endl;
+	cout << "2) Premium " << endl;
 }
 
 bool VistaConsola::validarStock(int stock, int cantidadProductoCotizar)
@@ -375,9 +397,50 @@ double VistaConsola::validarEntradaPrecio(string input)
 	return num;
 }
 
-void VistaConsola::prueba()
+int VistaConsola::validarEntradaCaracteristica(string input , int &opcion)
 {
-	//presentador->cotizarCamisa(1, 0, 0, 10, 10);
+	int num = -1;
+	try
+	{
+		num = stoi(input);
+		opcion = num;
 
+		if (num == 1) {
+			num = 0;
+		}
+		else if (num == 2) {
+			num == 1;
+		}
+
+	}
+	catch (const invalid_argument& e) {
+		cout << "Error: Entrada invalida, ingrese un numero de las opciones " << endl;
+	}
+
+	return num;
 }
+
+double VistaConsola::validadEntradaPrecio(string inout, int& opcion)
+{
+	double num = -1;
+	try
+	{
+		num = stoi(inout);
+		opcion = num;
+
+		if (num == 1) {
+			num = 0;
+		}
+		else if (num == 2) {
+			num == 1;
+		}
+
+	}
+	catch (const invalid_argument& e) {
+		cout << "Error: Entrada invalida, ingrese un numero de las opciones " << endl;
+	}
+
+	return num;
+}
+
 

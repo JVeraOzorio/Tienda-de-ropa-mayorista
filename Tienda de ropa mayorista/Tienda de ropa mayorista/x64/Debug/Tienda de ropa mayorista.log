@@ -1,2 +1,10 @@
-﻿  Tienda.cpp
+﻿  VistaConsola.cpp
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(230,33): warning C4101: 'e': variable local sin referencia
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(375,30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(389,33): warning C4101: 'e': variable local sin referencia
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(412,8): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(416,33): warning C4101: 'e': variable local sin referencia
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(429,12): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(435,8): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\VistaConsola.cpp(439,33): warning C4101: 'e': variable local sin referencia
   Tienda de ropa mayorista.vcxproj -> C:\Users\gatoe\OneDrive\Escritorio\Nueva carpeta\Tienda de ropa mayorista\Tienda de ropa mayorista\x64\Debug\Tienda de ropa mayorista.exe
