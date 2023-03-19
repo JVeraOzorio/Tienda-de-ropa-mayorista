@@ -45,9 +45,7 @@ vector<Prenda*> Tienda::getPrendas()
 void Tienda::getStock()
 {   
 
-    for (const auto& prenda : prendas) {
-        cout << prenda->getDescripcion() << endl;
-    }
-
+ 
+    
 }
 

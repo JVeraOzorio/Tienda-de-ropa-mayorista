@@ -120,7 +120,7 @@ void VistaConsola::mostrarMenuCamisa()
 	do
 	{
 		encabezado();
-		cout << "La camisa a cotizar , ¿Es manga larga? " << endl;
+		cout << "La camisa a cotizar , ¿Es manga corta? " << endl;
 		cout << "1) SI" << endl;
 		cout << "2) NO" << endl;
 
@@ -135,7 +135,8 @@ void VistaConsola::mostrarMenuCamisa()
 			cuello = validarEntradaCaracteristica(input, opcion);
 			system("cls");
 			if (opcion < 3 && opcion >0)
-			{
+			{	
+				
 				MenuCalidad();
 				cin >> input;
 				calidad = validarEntradaCaracteristica(input, opcion);
@@ -184,7 +185,7 @@ void VistaConsola::mostrarMenuCamisa()
 			}
 		}
 		if (opcion == 0 || opcion > 3) {
-			cout << "Opcion invalida" << endl;
+			cout << "Opcion invalida, por favor ingrese una de las opciones." << endl;
 			system("pause");
 		}
 		if (opcion == 3) {
@@ -217,7 +218,7 @@ int VistaConsola::validarEntrada(string input)
 		num = stoi(input);
 		return num;
 	}
-	catch (const invalid_argument& e) {
+	catch (const invalid_argument& ) {
 		cout << "Error: Entrada invalida, ingrese un numero de las opciones " << endl;
 	}
 
@@ -230,7 +231,7 @@ int VistaConsola::validarEntrada(string input)
 void VistaConsola::MenuCuello()
 {	
 	encabezado();
-	cout << "Paso 2.b La camisa, ¿Es cuello Mao?" << endl;
+	cout << "Paso 2.b La camisa, ¿Es cuello común?" << endl;
 	cout << "1) SI" << endl;
 	cout << "2) NO" << endl;
 }
@@ -340,15 +341,17 @@ int VistaConsola::validarEntradaCaracteristica(string input, int& opcion)
 		if (num == 1) {
 			num = 0;
 		}
-		else if (num == 2) {
-			num == 1;
+		if (num == 2) {
+			num = 1;
 		}
 
 	}
-	catch (const invalid_argument& e) {
-		cout << "Error: Entrada invalida, ingrese un numero de las opciones " << endl;
-	}
+	catch (const invalid_argument& ) {
 
+		opcion= 4;
+
+	}
+	
 	return num;
 }
 
@@ -358,7 +361,7 @@ double VistaConsola::validadEntradaPrecio(string inout, int& opcion)
 	try
 	{
 		num = stoi(inout);
-		opcion = num;
+		opcion = (int) num;
 
 		if (num == 1) {
 			num = 0;
@@ -368,8 +371,10 @@ double VistaConsola::validadEntradaPrecio(string inout, int& opcion)
 		}
 
 	}
-	catch (const invalid_argument& e) {
+	catch (const invalid_argument& ) {
 		cout << "Error: Entrada invalida, ingrese un numero de las opciones " << endl;
+		system("pause");
+		opcion = 4;
 	}
 
 	return num;

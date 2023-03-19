@@ -14,10 +14,10 @@ Cotizacion Vendedor::realizarCotizacion(Prenda* prenda, int cantidad, double pre
 
 		//Falla el calulo de la camisa manga corta, cuello mao.
 
-		if (c->GetManga() == 1) {
+		if (c->GetManga() == 0) {
 			precio = precio * 0.90;
 		}
-		if (c->GetCuello() == 0) {
+		if (c->GetCuello() == 1) {
 			precio = precio * 1.03;
 		}
 		if (c->getCalidad() == 1) {
