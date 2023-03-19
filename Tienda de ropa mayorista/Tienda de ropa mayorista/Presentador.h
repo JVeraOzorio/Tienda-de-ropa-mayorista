@@ -15,5 +15,6 @@ private:
 		int getStockPantalon(int calidad, int corte, double precio);
 		bool cotizarPantalon(int calidad,int corte,int cantidad, double precio);
 		double cotizarCamisa(int calidad, int manga, int cuello, int cantidad, double precio);
+		~Presentador() { delete modelo; }
 };
 

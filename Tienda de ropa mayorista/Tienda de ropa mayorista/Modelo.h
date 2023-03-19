@@ -28,6 +28,6 @@ public:
 	Cotizacion cotizarCamisa(int calidad, int manga, int cuello, int cantidad, double precio);
     Cotizacion cotizarPantalon(int calidad, int corte, int cantidad, double precio);
 	Vendedor* getVendedor() { return vendedor; }
-	
+	~Modelo() { delete tienda; delete vendedor; }
 };
 

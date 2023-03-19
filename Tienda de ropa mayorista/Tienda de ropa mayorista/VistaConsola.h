@@ -26,5 +26,7 @@ public:
 	 void mostrarMenuPantalon();
 	 int validarEntradaCaracteristica(string input,int &opcion);
 	 double validadEntradaPrecio(string inout, int& opcion);
+	 ~VistaConsola() { delete presentador; }
+	 
 };
 
