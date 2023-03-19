@@ -15,8 +15,9 @@ private:
 	Tienda* tienda;
 	vector<Prenda*> prendas;
 	vector<Cotizacion> cotizaciones;
+	Vendedor *vendedor;
 public:
-	Modelo() { tienda = new Tienda(); }
+	Modelo() {  vendedor = new Vendedor("Jorge", "Vera"); tienda = new Tienda(this->getVendedor());}
 	string getNombreTienda();
 	string getNombreVendedor();
 	int getCodigoVendedor();
@@ -26,6 +27,7 @@ public:
 	void mostrarPrendas() { tienda->getStock(); }
 	Cotizacion cotizarCamisa(int calidad, int manga, int cuello, int cantidad, double precio);
     Cotizacion cotizarPantalon(int calidad, int corte, int cantidad, double precio);
+	Vendedor* getVendedor() { return vendedor; }
 	
 };
 

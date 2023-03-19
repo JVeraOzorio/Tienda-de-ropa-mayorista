@@ -12,7 +12,7 @@ Fecha::Fecha()
     dia = timeinfo.tm_mday;
     mes = timeinfo.tm_mon + 1;
     anio = timeinfo.tm_year + 1900;
-    hora = timeinfo.tm_hour + 1;
+    hora = timeinfo.tm_hour ;
     minuto = timeinfo.tm_min;
 
 }

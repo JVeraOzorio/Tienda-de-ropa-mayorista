@@ -16,6 +16,7 @@ private:
 
 public:
 	Vendedor(string nombre, string apellido);
+	Vendedor(Vendedor* vendedor) : nombre(vendedor->getNombre()), apellido(vendedor->getApellido()) { }
 	string getNombre() { return nombre; }
 	string getApellido() { return apellido; }
 	int getCodigo() { return codigoVendedor; }

@@ -4,7 +4,7 @@
 
 
 
-Tienda::Tienda() : vendedor("Jorge", "Vera")
+Tienda::Tienda(Vendedor* _vendedor) : vendedor(_vendedor)
 {
     this->nombre = "Quarkies";
     this->direccion = "Av madero 123 ";

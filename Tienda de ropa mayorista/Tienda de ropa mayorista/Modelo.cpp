@@ -22,9 +22,9 @@ int Modelo::getCodigoVendedor()
 
 vector<Cotizacion> Modelo::getCotizaciones()
 {   
-   cotizaciones = tienda->getCotizaciones();
+   //cotizaciones = tienda->getCotizaciones();
 
-   return tienda->getCotizaciones();
+    return cotizaciones;
  
 }
 
@@ -37,13 +37,9 @@ int Modelo::getStockCamisa(int calidad, int manga, int cuello)
 Cotizacion Modelo::cotizarCamisa(int calidad, int manga, int cuello, int cantidad, double precio)
 {
     Camisa camisa(calidad, cantidad, manga, cuello, precio);
-   
-
-    Cotizacion cotizacion = tienda->cotizar(&camisa, cantidad, precio);
- 
-    cotizaciones.push_back(cotizacion);
-
-    
+       
+   Cotizacion cotizacion = vendedor->realizarCotizacion(&camisa, cantidad, precio);
+   cotizaciones.push_back(cotizacion);
 
     return cotizacion;
 }
@@ -52,7 +48,7 @@ Cotizacion Modelo::cotizarPantalon(int calidad, int corte, int cantidad, double 
 {   
     Pantalon pantalon(calidad, cantidad, corte, precio);
 
-    Cotizacion cotizacion = tienda->cotizar(&pantalon, cantidad, precio);
+    Cotizacion cotizacion = vendedor->realizarCotizacion(&pantalon, cantidad, precio);
 
     cotizaciones.push_back(cotizacion);
 

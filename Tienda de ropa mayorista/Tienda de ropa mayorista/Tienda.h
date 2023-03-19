@@ -21,7 +21,7 @@ private:
 
 public:
 	Tienda(string _nombre, string _direccion,string Nombrevendedor, string ApellVendedor) : nombre(_nombre), direccion(_direccion), prendas(vector<Prenda*>()),vendedor(Nombrevendedor,ApellVendedor) { }
-	Tienda();
+	Tienda(Vendedor* _vendedor);
 	string getNombre() { return nombre; }
 	string getDireccion() {return direccion;}
 	string getVendedor() { return vendedor.getNombre() + " " + vendedor.getApellido(); }
@@ -30,7 +30,6 @@ public:
 	Cotizacion cotizar(Prenda* prenda, int cantidad, double precio);
 	void getStock ();
 	~Tienda();
-	vector <Cotizacion> getCotizaciones() { return vendedor.getCotizaciones(); }
 
 };
 
