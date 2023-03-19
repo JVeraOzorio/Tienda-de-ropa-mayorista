@@ -26,7 +26,7 @@ Cotizacion Vendedor::realizarCotizacion(Prenda* prenda, int cantidad, double pre
 
 		precio = std::floor(precio * 100) / 100;
 
-		Cotizacion cotizacion(codigoVendedor, c, cantidad, precio);
+		Cotizacion cotizacion(codigoVendedor, c->getDescripcion() , cantidad, precio);
 		cotizaciones.push_back(cotizacion);
 		return cotizacion;
 	}
@@ -39,7 +39,7 @@ Cotizacion Vendedor::realizarCotizacion(Prenda* prenda, int cantidad, double pre
 			precio = precio * 1.3;
 		}
 		precio = std::floor(precio * 100) / 100;
-		Cotizacion cotizacion(codigoVendedor, p, cantidad, precio);
+		Cotizacion cotizacion(codigoVendedor, p->getDescripcion(), cantidad, precio);
 		cotizaciones.push_back(cotizacion);
 		return cotizacion;
 	}

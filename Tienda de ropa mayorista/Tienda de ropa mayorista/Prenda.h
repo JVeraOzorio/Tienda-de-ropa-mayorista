@@ -10,7 +10,7 @@ protected:
 	double precio;
 	int stock;
 public:
-	//Prenda(tipoCalidad calidad, float precio, int cantidad);
+
 	Prenda(int calidad, int stock, double precio);
 	virtual ~Prenda() {} // Virtual y destructor para que la clase sea abstracta
 	virtual int getCalidad()  = 0; // Función virtual pura

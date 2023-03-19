@@ -22,12 +22,11 @@ private:
 public:
 	Tienda(string _nombre, string _direccion,string Nombrevendedor, string ApellVendedor) : nombre(_nombre), direccion(_direccion), prendas(vector<Prenda*>()),vendedor(Nombrevendedor,ApellVendedor) { }
 	Tienda();
-	void AgregarPrenda(Prenda* prenda);
 	string getNombre() { return nombre; }
 	string getDireccion() {return direccion;}
 	string getVendedor() { return vendedor.getNombre() + " " + vendedor.getApellido(); }
 	int getCodigoVendedor() {return vendedor.getCodigo(); }
-	vector<Prenda*> getPrendas(); //{ 	return prendas; }
+	vector<Prenda*> getPrendas(); 
 	Cotizacion cotizar(Prenda* prenda, int cantidad, double precio);
 	void getStock ();
 	~Tienda();

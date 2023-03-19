@@ -13,81 +13,102 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de origen\Modelo">
+      <UniqueIdentifier>{1b3eb6c6-94b1-4e52-8cdf-7f33bfc8a9df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Vista">
+      <UniqueIdentifier>{be9ec6b0-02f8-48cc-b6d7-5607541a8b49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Presentador">
+      <UniqueIdentifier>{ea2c41aa-e9c7-42c9-a21f-f65580416316}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Modelo\Modelo.cpp">
+      <UniqueIdentifier>{5b10c994-e6af-4942-9ac7-2fe7fbd96ee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Modelo.h">
+      <UniqueIdentifier>{cfb0140b-aaff-4a46-8b6c-f982b841b5f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Presentador.h">
+      <UniqueIdentifier>{d2fbb129-c29f-4d69-b3fd-1b42c176e1ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Vista.h">
+      <UniqueIdentifier>{a930131c-3a2b-4ba8-a027-7b009c6889eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tienda de ropa mayorista.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Vendedor.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Cotizacion.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Fecha.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Prenda.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Tienda.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Camisa.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Pantalon.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="IVista.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Modelo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="VistaConsola.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Vista</Filter>
     </ClCompile>
     <ClCompile Include="Presentador.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Presentador</Filter>
+    </ClCompile>
+    <ClCompile Include="VistaConsola.cpp">
+      <Filter>Archivos de origen\Vista</Filter>
+    </ClCompile>
+    <ClCompile Include="Camisa.cpp">
+      <Filter>Archivos de origen\Modelo\Modelo.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Cotizacion.cpp">
+      <Filter>Archivos de origen\Modelo\Modelo.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Fecha.cpp">
+      <Filter>Archivos de origen\Modelo\Modelo.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Modelo.cpp">
+      <Filter>Archivos de origen\Modelo\Modelo.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Pantalon.cpp">
+      <Filter>Archivos de origen\Modelo\Modelo.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Prenda.cpp">
+      <Filter>Archivos de origen\Modelo\Modelo.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Tienda.cpp">
+      <Filter>Archivos de origen\Modelo\Modelo.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Vendedor.cpp">
+      <Filter>Archivos de origen\Modelo\Modelo.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vendedor.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Cotizacion.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Fecha.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Prenda.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Tienda.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Camisa.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Pantalon.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="IVista.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Camisa.h">
+      <Filter>Archivos de encabezado\Modelo.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Cotizacion.h">
+      <Filter>Archivos de encabezado\Modelo.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Fecha.h">
+      <Filter>Archivos de encabezado\Modelo.h</Filter>
     </ClInclude>
     <ClInclude Include="Modelo.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Modelo.h</Filter>
     </ClInclude>
-    <ClInclude Include="VistaConsola.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Pantalon.h">
+      <Filter>Archivos de encabezado\Modelo.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Prenda.h">
+      <Filter>Archivos de encabezado\Modelo.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Tienda.h">
+      <Filter>Archivos de encabezado\Modelo.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Vendedor.h">
+      <Filter>Archivos de encabezado\Modelo.h</Filter>
     </ClInclude>
     <ClInclude Include="Presentador.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Presentador.h</Filter>
+    </ClInclude>
+    <ClInclude Include="IVista.h">
+      <Filter>Archivos de encabezado\Vista.h</Filter>
+    </ClInclude>
+    <ClInclude Include="VistaConsola.h">
+      <Filter>Archivos de encabezado\Vista.h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,6 @@
 #include "Tienda.h"
 
-void Tienda::AgregarPrenda(Prenda* prenda)
-{
-    prendas.push_back(prenda);
-}
+
 
 
 

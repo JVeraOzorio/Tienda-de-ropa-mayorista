@@ -48,7 +48,7 @@ int Camisa::GetCuello()
 string Camisa::getDescripcion()
 {
 	string descripcion;
-	descripcion = "Camisa " + to_string(getCalidad()) + " | " + to_string(GetManga()) + " | " + to_string(GetCuello()) + " | " + to_string(precio);
+	descripcion = "Camisa " + getTipoCalidad() + " | " + getTipoManga() + " | " + getTipoCuello();
 	return descripcion;
 }
 
@@ -63,4 +63,48 @@ int Camisa::getCalidad()
 	default: return 0;
 		break;
 	}
+}
+
+string Camisa::getTipoManga()
+{	
+	switch (tipo_manga_)
+	{
+	case TipoManga::Corta: return " manga corta";
+		break;
+	case TipoManga::Larga: return " manga larga";
+		break;
+	default:
+		break;
+	}
+
+	return string();
+}
+
+string Camisa::getTipoCuello()
+{	
+	switch (tipo_cuello_)
+	{
+	case TipoCuello::Mao: return "Cuello mao";
+		break;
+	case TipoCuello::Comun: return "Cuello común";
+		break;
+	default:
+		break;
+	}
+	return string();
+}
+
+string Camisa::getTipoCalidad()
+{	
+	switch (calidad)
+	{
+	case tipoCalidad::Standard: return "Standard";
+		break;
+	case tipoCalidad::Premium: return "Premium";
+		break;
+	default:
+		break;
+	}
+
+	return string();
 }

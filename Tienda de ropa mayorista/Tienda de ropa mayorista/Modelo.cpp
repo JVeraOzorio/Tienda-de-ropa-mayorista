@@ -59,22 +59,6 @@ Cotizacion Modelo::cotizarPantalon(int calidad, int corte, int cantidad, double 
     return cotizacion;
 }
 
-void Modelo::descontarStock(Prenda* prenda, int cantidad)
-{
 
-    int camisasDescontadas = 0;
-    Camisa* camisa = dynamic_cast<Camisa*>(prenda);
-    Pantalon* pantalon = dynamic_cast<Pantalon*>(prenda);
-    
-    for (Prenda* p : prendas) {
-        if (camisa != nullptr) {
-            if (p = dynamic_cast <Camisa*>(p));      // recorriendo el vector para descontar el stock
-        }
-        else if (pantalon != nullptr) {
-
-        }
-    }
-   
-}
 
 

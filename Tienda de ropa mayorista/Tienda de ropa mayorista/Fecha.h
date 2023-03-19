@@ -14,6 +14,8 @@ private:
 	int dia;
 	int mes;
 	int anio;
+	int hora;
+	int minuto;
 public:
 	Fecha();
 	Fecha(int dia, int mes, int anio);

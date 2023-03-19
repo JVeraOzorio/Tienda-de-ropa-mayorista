@@ -28,7 +28,7 @@ int Pantalon::GetCorte()
 
 string Pantalon::getDescripcion()
 {
-	string descripcion = "Pantalon " + GetCorte();
+	string descripcion = "Pantalon "  + getTipoCorte() + getTipoCalidad();
 	return descripcion;
 }
 
@@ -43,4 +43,34 @@ int Pantalon::getCalidad()
 		default: return 0;
 			break;
 	}
+}
+
+string Pantalon::getTipoCorte()
+{	
+
+	switch (corte)
+	{
+	case TipoCorte::Chupin: return "Chupin";
+		break;
+	case TipoCorte::Comun: return "Común";
+		break;
+	default:
+		break;
+	}
+	return string();
+}
+
+string Pantalon::getTipoCalidad()
+{	
+	switch (calidad)
+	{
+	case tipoCalidad::Standard: return "Standard";
+		break;
+	case tipoCalidad::Premium: return "Premium";
+		break;
+	default:
+		break;
+	}
+
+	return string();
 }
