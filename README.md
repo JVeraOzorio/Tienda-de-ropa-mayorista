@@ -16,7 +16,7 @@ o igual al stock.
 Luego de proveer la informacion nos mostrara por pantalla el comprobante de la cotizacion que se realizo. Algo parecido al siguiente: 
 _________________________________________________________
 Codigo Cotizacion: 1
-Fecha de realizacion: 19/3/2023 | 1:4
+Fecha de realizacion: 19/3/2023 | 1:04
 Codigo de Vendedor: 1
 Prenda : Camisa Standard |  manga larga | Cuello común
 Precio : 100
