@@ -33,7 +33,7 @@ Si solicitamos el historial nos imprimira por pantalla la serie de cotizaciones 
 
 _____________________________________________________________________
 Codigo Cotizacion: 1
-Fecha de realizacion: 19/3/2023 | 1:4
+Fecha de realizacion: 19/3/2023 | 1:04
 Codigo de Vendedor: 1
 Prenda : Camisa Standard |  manga larga | Cuello común
 Precio : 100
@@ -41,7 +41,7 @@ Cantidad : 1
 Precio Final: 100
 
 Codigo Cotizacion: 2
-Fecha de realizacion: 19/3/2023 | 1:5
+Fecha de realizacion: 19/3/2023 | 1:05
 Codigo de Vendedor: 1
 Prenda : Camisa Standard |  manga larga | Cuello mao
 Precio : 103
