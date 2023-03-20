@@ -360,7 +360,7 @@ double VistaConsola::validadEntradaPrecio(string inout, int& opcion)
 	double num = -1;
 	try
 	{
-		num = stoi(inout);
+		num = stod(inout);
 		opcion = (int) num;
 
 		if (num == 1) {
